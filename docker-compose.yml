@@ -1,0 +1,93 @@
+version: "3.8"
+
+services:
+  kali:
+    image: kalilinux/kali-linux-docker
+    container_name: kali
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  zap:
+    image: owasp/zap2docker-stable
+    container_name: zap
+    tty: true
+    stdin_open: true
+    command: zap.sh -daemon -host 0.0.0.0 -port 8080
+
+  wpscan:
+    image: wpscanteam/wpscan
+    container_name: wpscan
+    entrypoint: ["wpscan"]
+
+  metasploit:
+    image: pandrew/metasploit
+    container_name: metasploit
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  dvwa:
+    image: citizenstig/dvwa
+    container_name: dvwa
+    ports:
+      - "80:80"
+
+  vulnwp:
+    image: wpscanteam/vulnerablewordpress
+    container_name: vulnerable_wordpress
+    ports:
+      - "8081:80"
+
+  shellshock:
+    image: hmlio/vaas-cve-2014-6271
+    container_name: shellshock
+    ports:
+      - "8091:80"
+
+  heartbleed:
+    image: hmlio/vaas-cve-2014-0160
+    container_name: heartbleed
+    ports:
+      - "8092:443"
+
+  security_ninjas:
+    image: opendns/security-ninjas
+    container_name: security_ninjas
+    tty: true
+    stdin_open: true
+
+  arch_pentest:
+    image: usertaken/archlinux-pentest-lxde
+    container_name: arch_pentest
+    tty: true
+    stdin_open: true
+
+  docker_bench:
+    image: diogomonica/docker-bench-security
+    container_name: docker_bench
+    entrypoint: ["/bin/bash", "-c", "/docker-bench-security.sh"]
+
+  security_shepherd:
+    image: ismisepaul/securityshepherd
+    container_name: security_shepherd
+    ports:
+      - "9000:9000"
+
+  webgoat:
+    image: danmx/docker-owasp-webgoat
+    container_name: webgoat
+    ports:
+      - "8080:8080"
+
+  mutillidae:
+    image: citizenstig/nowasp
+    container_name: mutillidae
+    ports:
+      - "8090:80"
+
+  juice_shop:
+    image: bkimminich/juice-shop
+    container_name: juice_shop
+    ports:
+      - "3000:3000"
