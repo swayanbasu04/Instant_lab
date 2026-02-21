@@ -1,7 +1,6 @@
-# Welcome to Instant Lab Using Docker
+# Welcome to Instant Lab - Raspberry Pi & Docker
 
 ## Overview
-
 This homelab provides a containerized cybersecurity testing environment with pre-configured scripts for running various security tools for practice.
 
 ## Contents
