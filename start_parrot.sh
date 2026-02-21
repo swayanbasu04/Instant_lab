@@ -7,6 +7,7 @@ mkdir -p "$PWD/work" "$PWD/msf"
 docker run --rm -ti --network host -v "$PWD/work":/work parrotsec/security
 # install neccesary packages
 apt install wget net-tools python3 python3-pip wget curl hashcat john hydra git dig nikto metasploit-framework zapproxy dnsmap recon-ng sslscan gobuster 
+newgrp docker
 # Run nmap (uncomment to use)
 # docker run --rm -ti parrotsec/nmap options
 
