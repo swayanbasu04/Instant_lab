@@ -1,17 +1,47 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+echo "[+] Update and upgrade the OS"
 sudo parrot-upgrade
-sudo apt update && sudo apt install -y docker.io
+
+echo "[+] Installing docker..."
+if ! command -v docker >/dev/null 2>&1; then
+  sudo apt update
+  sudo apt install -y docker.io
+  sudo systemctl enable --now docker
+  echo "[*] docker installed and started"
+else
+  echo "[*] docker is already installed."
+fi
+
 mkdir -p "$PWD/work" "$PWD/msf"
-# Docker lab using Parrot enviroment
-docker run --rm -ti --network host -v "$PWD/work":/work parrotsec/security
-# install neccesary packages
-apt install wget net-tools python3 python3-pip wget curl hashcat john hydra git dig nikto metasploit-framework zapproxy dnsmap recon-ng sslscan gobuster 
+echo "[+] Updating and installing packages in Parrot container..."
+docker run -ti --network host -v $PWD/work:/work parrotsec/security
+
+  apt update
+  apt install -y \
+    python3 \
+    python3-pip \
+    nano \
+    wget \
+    curl \
+    hashcat \
+    net-tools \
+    john \
+    tshark \
+    nikto \
+    hydra \
+    gobuster \
+    sqlmap \
+    tcpdump \
+    git \
+    metasploit-framework \
+    dnsmap \
+    recon-ng \
+    sslscan \
+    && apt clean
+
+sudo usermod -aG docker $USER
 newgrp docker
-# Run nmap (uncomment to use)
-# docker run --rm -ti parrotsec/nmap options
-
-# Run metasploit container with mounted msf dir (uncomment to use)
-# docker run --rm -ti --network host -v $PWD/msf:/root/ parrotsec/metasploit
-docker run --rm -d --name juice-shop -p 3000:3000 bkimminich/juice-shop
-
+echo "[*] Your parrot container is ready."
+echo "[*] welcome to instant lab environment with parrotsec/security container!"
