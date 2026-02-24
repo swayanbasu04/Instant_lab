@@ -23,8 +23,8 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 
 1. **Clone this repository:**
    ```bash
-   git clone <repository-url>
-   cd Homelab
+   git clone https://github.com/swayanbasu04/Instant_lab
+   cd Instant_lab
    ```
 
 2. **Make the main script executable:**
@@ -45,7 +45,7 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 **Description:** Full-featured Parrot Security OS container with comprehensive penetration testing tools.
 
 **Included Tools:**
-- Network scanning: `nmap`, `netdiscover`
+- Network scanning: `nmap`, `net-tools`
 - Web application testing: `nikto`, `gobuster`, `sqlmap`
 - Password cracking: `hashcat`, `john`, `hydra`
 - Exploitation: `metasploit-framework`
@@ -142,17 +142,17 @@ If you prefer to run containers manually:
 
 ### Nmap
 ```bash
-docker run --rm -ti parrotsec/nmap <target> <options>
+docker run -ti parrotsec/nmap <target> <options>
 ```
 
 ### Metasploit
 ```bash
-docker run --rm -ti --network host -v $PWD/msf:/root/ parrotsec/metasploit
+docker run -ti --network host -v $PWD/msf:/root/ parrotsec/metasploit
 ```
 
 ### Parrot Security
 ```bash
-docker run --rm -ti --network host -v $PWD/work:/work parrotsec/security
+docker run -ti --network host -v $PWD/work:/work parrotsec/security
 ```
 
 ### DVWA(Damm vulnerable web application)
