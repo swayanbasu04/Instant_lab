@@ -7,6 +7,15 @@ echo "[+]   Please make sure you have Docker installed and running on your syste
 echo "[+]   If you don't have Docker installed, the script will attempt to install it for you."
 echo "[+]   After running this script, you can access the DVWA container at http://localhost:8888"
 echo "[+]   Enjoy your lab environment and keep learning and practicing your cybersecurity skills!"
+echo " are you have docker installed and running? (y/n) "
+read -n 1 -s -r answer
+echo ""
+if [[ $answer == "y" || $answer == "Y" ]]; then
+    echo "[*] Great! Let's get started with setting up your lab environment."
+else
+    echo "[*] No worries! The script will now attempt to install Docker for you."
+    bash start_dock.sh
+fi
 echo "Choose which container you want to start: "
 echo "  1. parrotsec/security"
 echo "  2. parrotsec/metasploit"
@@ -41,8 +50,11 @@ case "$choice" in
     echo "[-] Invalid option. Please choose 1, 2, 3, 4, or 5."
     exit 1
     ;;
-esac
 
-Maintainers:
-- swayan basu < basuswayan72@outlook.com >
+esac
+echo "[*] Your lab environment is ready to use!"
+
+
+# Maintainers:
+# - swayan basu < github.com/swayanbasu >
 echo "[*] Script execution completed. Your lab environment is ready to use!"
