@@ -1,4 +1,5 @@
 # Welcome to Instant Lab - Raspberry Pi & Docker
+[![CI](https://github.com/swayanbasu04/Instant_lab/actions/workflows/blank.yml/badge.svg)](https://github.com/swayanbasu04/Instant_lab/actions/workflows/blank.yml)
 
 ## Overview
 
