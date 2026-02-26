@@ -22,8 +22,9 @@ echo "  2. parrotsec/metasploit"
 echo "  3. parrotsec/tshark"
 echo "  4. kali"
 echo "  5. DVWA"
+echo "  6. juice-shop"
 
-read -p "Enter your choice (1-5): " choice
+read -p "Enter your choice (1-6): " choice
 
 case "$choice" in
   1)
@@ -46,8 +47,12 @@ case "$choice" in
     echo "[+] Starting DVWA container"
     bash start_dvwa.sh
     ;;
+  6)
+    echo "[+] Starting juice-shop container"
+    bash start_juice.sh
+    ;;
   *)
-    echo "[-] Invalid option. Please choose 1, 2, 3, 4, or 5."
+    echo "[-] Invalid option. Please choose 1, 2, 3, 4, 5, or 6."
     exit 1
     ;;
 
