@@ -157,7 +157,7 @@ docker run -ti --network host -v $PWD/work:/work parrotsec/security
 
 ### DVWA(Damm vulnerable web application)
 ```bash
-docker run -d -p 8888:80 vulnerables/web-dvwa
+docker run -d -p 8080:80 vulnerables/web-dvwa
 ```
 
 ## Tips & Best Practices
