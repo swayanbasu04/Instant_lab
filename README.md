@@ -136,6 +136,36 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 - Command Injection
 - And more...
 
+### 6. Juice Shop (`start_juice.sh`)
+**Description:** OWASP Juice Shop - A modern, intentionally vulnerable JavaScript web application for security training and awareness.
+
+**Usage:**
+```bash
+./start_juice.sh
+# or choose option 6 from start_main.sh
+```
+
+**Access:** `http://localhost:3000`
+
+**Features:**
+- Modern web application vulnerabilities
+- Over 100 security challenges
+- Gamified learning experience
+- Real-world vulnerability patterns
+- Multi-language support
+- RESTful API testing
+
+**Practice Areas:**
+- Broken Authentication
+- Broken Access Control
+- Sensitive Data Exposure
+- XML External Entities (XXE)
+- Insecure Deserialization
+- Injection Attacks
+- Cross-Site Scripting (XSS)
+- Cross-Site Request Forgery (CSRF)
+- Using Components with Known Vulnerabilities
+- Insufficient Logging & Monitoring
 
 ## Manual Docker Commands
 
@@ -160,6 +190,7 @@ docker run -ti --network host -v $PWD/work:/work parrotsec/security
 ```bash
 docker run -d -p 8080:80 vulnerables/web-dvwa
 ```
+
 
 ## Tips & Best Practices
 
