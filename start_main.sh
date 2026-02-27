@@ -61,5 +61,5 @@ echo "[*] Your lab environment is ready to use!"
 
 
 # Maintainers:
-# - swayan basu < github.com/swayanbasu >
+# - swayan basu < github.com/swayanbasu04 >
 echo "[*] Script execution completed. Your lab environment is ready to use!"
