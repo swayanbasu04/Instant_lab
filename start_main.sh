@@ -23,8 +23,9 @@ echo "  3. parrotsec/tshark"
 echo "  4. kali"
 echo "  5. DVWA"
 echo "  6. juice-shop"
+echo "  7. elasticsearch & kibana(ELK stack)"
 
-read -p "Enter your choice (1-6): " choice
+read -p "Enter your choice (1-7): " choice
 
 case "$choice" in
   1)
@@ -51,8 +52,12 @@ case "$choice" in
     echo "[+] Starting juice-shop container"
     bash start_juice.sh
     ;;
+  7)
+    echo "[+] Starting ELK stack (Elasticsearch & Kibana) containers"
+    bash start_elk.sh
+    ;;
   *)
-    echo "[-] Invalid option. Please choose 1, 2, 3, 4, 5, or 6."
+    echo "[-] Invalid option. Please choose 1, 2, 3, 4, 5, 6, or 7."
     exit 1
     ;;
 
