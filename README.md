@@ -167,30 +167,49 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 - Using Components with Known Vulnerabilities
 - Insufficient Logging & Monitoring
 
-## Manual Docker Commands
+### 7. ELK stack (`start_elk.sh`)
+**Description:** Elasticsearch, Logstash, and Kibana (ELK) stack for log aggregation, analysis, and visualization. A powerful SIEM (Security Information and Event Management) platform for security monitoring and threat detection.
 
-If you prefer to run containers manually:
-
-### Nmap
+**Usage:**
 ```bash
-docker run -ti parrotsec/nmap <target> <options>
+./start_elk.sh
+# or choose option 7 from start_main.sh
 ```
 
-### Metasploit
-```bash
-docker run -ti --network host -v $PWD/msf:/root/ parrotsec/metasploit
-```
+**Access:**
+- Kibana: `http://localhost:5601`
+- Elasticsearch: `http://localhost:9200`
+- Logstash API: `http://localhost:9600`
+- Logstash Beats Input: `port 5044`
 
-### Parrot Security
-```bash
-docker run -ti --network host -v $PWD/work:/work parrotsec/security
-```
+**Components:**
+- **Elasticsearch:** Distributed search and analytics engine for storing and indexing logs
+- **Logstash:** Data processing pipeline for ingesting, transforming, and forwarding logs
+- **Kibana:** Visualization and exploration interface for analyzing data
 
-### DVWA(Damm vulnerable web application)
-```bash
-docker run -d -p 8080:80 vulnerables/web-dvwa
-```
+**Features:**
+- Custom `elk-network` for inter-container communication
+- Single-node Elasticsearch setup optimized for homelab use
+- Persistent container instances that survive reboots
+- Real-time log ingestion and analysis
+- Full-text search across all logs
+- Customizable dashboards and visualizations
+- Alert and monitoring capabilities
+- RESTful API access to all components
 
+**Practice Areas:**
+- Security Information and Event Management (SIEM)
+- Log aggregation and centralized logging
+- Security monitoring and incident detection
+- Threat hunting and investigation
+- Network traffic analysis and visualization
+- Application performance monitoring (APM)
+- Creating custom security dashboards
+- Writing detection rules and alerts
+- Log parsing and normalization
+- Correlation of security events
+- Forensic analysis and investigation
+- Compliance monitoring and reporting
 
 ## Tips & Best Practices
 
