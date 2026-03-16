@@ -16,6 +16,16 @@ else
     echo "[*] No worries! The script will now attempt to install Docker for you."
     bash start_dock.sh
 fi
+echo "[*] Docker is installed and running. Now, let's proceed with setting up your lab environment."  
+echo "Want to check the status of your containers? (y/n)"
+read -n 1 -s -r check_status
+echo ""
+if [[ $check_status == "y" || $check_status == "Y" ]]; then
+    echo "[*] Checking the status of your containers..."
+    bash status.sh
+else
+    echo "[*] Skipping container status check. You can check the status later using 'docker ps' command."
+fi
 echo "Choose which container you want to start: "
 echo "  1. parrotsec/security"
 echo "  2. parrotsec/metasploit"
