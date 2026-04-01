@@ -8,10 +8,9 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 **Key Features:**
 - 🐳 Fully containerized environment using Docker
 - 🛡️ Multiple security-focused Linux distributions (Parrot Security, Kali Linux)
-- 🎯 Vulnerable web application for practice (DVWA)
+- 🎯 Vulnerable web application for practice (DVWA, Juice shop)
 - 🔧 Pre-installed penetration testing tools
 - 📦 Persistent data storage for your work
-- 🚀 Simple menu-driven interface
 
 ## Prerequisites
 
@@ -107,11 +106,6 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 ./start_rkali.sh
 # or choose option 4 from start_main.sh
 ```
-
-**Features:**
-- Custom Dockerfile for personalization
-- Mounted work directory at `/work`
-- Persistent `rkali/` directory
 
 ### 5. DVWA (`start_dvwa.sh`)
 **Description:** Damn Vulnerable Web Application - A deliberately vulnerable PHP/MySQL web application for security training.
