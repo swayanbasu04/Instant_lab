@@ -6,11 +6,11 @@
 A Security Operations Center (SOC) homelab environment built on Raspberry Pi and Docker. This project provides an instant, containerized cybersecurity testing and Security Operations platform with pre-configured scripts for running various security tools, vulnerability assessments, and penetration testing exercises.
 
 **Key Features:**
-- 🐳 Fully containerized environment using Docker
-- 🛡️ Multiple security-focused Linux distributions (Parrot Security, Kali Linux)
-- 🎯 Vulnerable web application for practice (DVWA, Juice shop)
-- 🔧 Pre-installed penetration testing tools
-- 📦 Persistent data storage for your work
+>> Fully containerized environment using Docker
+>> Multiple security-focused Linux distributions (Parrot Security, Kali Linux)
+>> Vulnerable web application for practice (DVWA, Juice shop)
+>> Pre-installed penetration testing tools
+>> Persistent data storage for your work
 
 ## Prerequisites
 
@@ -181,29 +181,6 @@ A Security Operations Center (SOC) homelab environment built on Raspberry Pi and
 - **Logstash:** Data processing pipeline for ingesting, transforming, and forwarding logs
 - **Kibana:** Visualization and exploration interface for analyzing data
 
-**Features:**
-- Custom `elk-network` for inter-container communication
-- Single-node Elasticsearch setup optimized for homelab use
-- Persistent container instances that survive reboots
-- Real-time log ingestion and analysis
-- Full-text search across all logs
-- Customizable dashboards and visualizations
-- Alert and monitoring capabilities
-- RESTful API access to all components
-
-**Practice Areas:**
-- Security Information and Event Management (SIEM)
-- Log aggregation and centralized logging
-- Security monitoring and incident detection
-- Threat hunting and investigation
-- Network traffic analysis and visualization
-- Application performance monitoring (APM)
-- Creating custom security dashboards
-- Writing detection rules and alerts
-- Log parsing and normalization
-- Correlation of security events
-- Forensic analysis and investigation
-- Compliance monitoring and reporting
 
 ## Tips & Best Practices
 
